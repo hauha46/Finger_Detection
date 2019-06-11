@@ -11,15 +11,12 @@ while True:
     frame_HSV = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
     frame_threshold = cv.inRange(frame_HSV, (0, 58, 140), (57, 255, 255))
 
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    blur = cv.blur(gray, (3, 3))
     ret, thresh = cv.threshold(frame_threshold, 50, 255, cv.THRESH_BINARY)
     contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
     hull = []
     for i in range(len(contours)):
         hull.append(cv.convexHull(contours[i], False))
-        # hull.append(hulll)
     drawing = np.zeros((thresh.shape[0], thresh.shape[1], 3), np.uint8)
     for i in range(len(contours)):
         color_contours = (0, 255, 0)
