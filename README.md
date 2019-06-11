@@ -30,3 +30,7 @@ Flaws:
 - The program has not had the perfect condition to extract the fingers only
 - The program could not detect any finger in the case there is only 1 finger was shown. That was because the angle of fingers has
 to be created from 2 fingers
+
+References: 
+https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_contours/py_contours_more_functions/py_contours_more_functions.html
+https://picoledelimao.github.io/blog/2015/11/15/fingertip-detection-on-opencv/
